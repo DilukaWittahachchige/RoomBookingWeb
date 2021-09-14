@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess
+namespace IBusinessServices
 {
-    interface IRepository
+    public interface IRoomBookingService
     {
+
     }
 }

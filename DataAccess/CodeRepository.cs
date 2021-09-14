@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IDataAccess
+namespace DataAccess
 {
-    class Repository
+    class CodeRepository
     {
     }
 }
