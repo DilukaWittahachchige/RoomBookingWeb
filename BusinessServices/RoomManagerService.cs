@@ -14,6 +14,8 @@ namespace BusinessServices
         {
             var allAvailableRooms = new List<Room>();
 
+
+
             return allAvailableRooms;
         }
     }

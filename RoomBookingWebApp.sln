@@ -29,7 +29,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scheduler", "Scheduler", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataServices", "DataServices", "{ED2A1347-9D8A-44F6-9C92-190CB17B8921}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceGateways", "ServiceGateways\ServiceGateways.csproj", "{6F5D589C-E940-4B8E-BF02-A8195F4AD4C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceGateways", "ServiceGateways\ServiceGateways.csproj", "{6F5D589C-E940-4B8E-BF02-A8195F4AD4C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF", "EF\EF.csproj", "{E902AEE9-9B68-48A0-9F96-EEFD97F3CCF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{6F5D589C-E940-4B8E-BF02-A8195F4AD4C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F5D589C-E940-4B8E-BF02-A8195F4AD4C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F5D589C-E940-4B8E-BF02-A8195F4AD4C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E902AEE9-9B68-48A0-9F96-EEFD97F3CCF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E902AEE9-9B68-48A0-9F96-EEFD97F3CCF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E902AEE9-9B68-48A0-9F96-EEFD97F3CCF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E902AEE9-9B68-48A0-9F96-EEFD97F3CCF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +88,7 @@ Global
 		{422FF60B-F396-46AE-B718-67ABF9ABBF69} = {1C52FE2A-ED8B-4C73-AC71-12250AC0DE40}
 		{ED2A1347-9D8A-44F6-9C92-190CB17B8921} = {8C614375-3CA6-4EB4-9280-1F320E9CCF52}
 		{6F5D589C-E940-4B8E-BF02-A8195F4AD4C2} = {ED2A1347-9D8A-44F6-9C92-190CB17B8921}
+		{E902AEE9-9B68-48A0-9F96-EEFD97F3CCF5} = {8C614375-3CA6-4EB4-9280-1F320E9CCF52}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D62A1A4-7D2C-4643-807D-8F0399FCFC98}
