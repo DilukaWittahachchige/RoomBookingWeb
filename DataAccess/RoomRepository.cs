@@ -16,7 +16,7 @@ namespace DataAccess
         /// <returns></returns>
         public IEnumerable<Room> LoadAllAvailable()
         {
-
+            throw new NotImplementedException();
         }
     }
 }

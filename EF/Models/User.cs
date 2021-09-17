@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace EF.Models
 {
+    public enum UserType { Admin, Guest, HouseKeeper, Technician }
+
     public class User
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int UserId { get; set; }
         public string UserName { get; set; }
+        public UserType Type { get; set; }
         public string UserPhoneNumber { get; set; }
         public string UserEmailAddress { get; set; }
         public string UserNRIC { get; set; }

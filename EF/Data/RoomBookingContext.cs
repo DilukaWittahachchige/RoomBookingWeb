@@ -1,4 +1,4 @@
-﻿using Common.Domain;
+﻿using EF.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
