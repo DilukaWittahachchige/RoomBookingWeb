@@ -8,15 +8,12 @@ using System.Threading.Tasks;
 
 namespace RoomBookingWebApp.Controllers
 {
-    [Route("api/[hotel-booking]")]
+    [Route("api/hotel-booking")]
     [ApiController]
     public class HotelBookingController : ControllerBase
     {
 
-
-
-
-        // GET: api/<HotelBookingController>
+       // GET: api/<HotelBookingController>
         [HttpGet]
         public IEnumerable<string> Get()
         {

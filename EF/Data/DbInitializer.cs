@@ -1,4 +1,5 @@
 ﻿using EF.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace EF.Data
         public static void Initialize(RoomBookingContext context)
         {
             context.Database.EnsureCreated();
+            //context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
 
             // Look for any Rooms.
             if (context.Rooms.Any())
@@ -66,13 +68,13 @@ namespace EF.Data
             context.SaveChanges();
 
                                                   
-        var hotelBookings = new HotelBooking[]
+            var hotelBookings = new HotelBooking[]
             {
-            new HotelBooking{RoomId=1,UserId=2,CheckInTime=DateTime.Parse("2002-09-01") ,CheckOutTime=DateTime.Parse("2002-09-01"),IsActive=true,IsDeleted=false,CreatedUserId =1,UpdatedUserId =1,CreatedDateTime=DateTime.Parse("2002-09-01"),UpdatedDateTime=DateTime.Parse("2002-09-01")},
-            new HotelBooking{RoomId=6,UserId=2,CheckInTime=DateTime.Parse("2002-09-01") ,CheckOutTime=DateTime.Parse("2002-09-01"),IsActive=true,IsDeleted=false,CreatedUserId =1,UpdatedUserId =1,CreatedDateTime=DateTime.Parse("2002-09-01"),UpdatedDateTime=DateTime.Parse("2002-09-01")},
-            new HotelBooking{RoomId=11,UserId=2,CheckInTime=DateTime.Parse("2002-09-01") ,CheckOutTime=DateTime.Parse("2002-09-01"),IsActive=true,IsDeleted=false,CreatedUserId =1,UpdatedUserId =1,CreatedDateTime=DateTime.Parse("2002-09-01"),UpdatedDateTime=DateTime.Parse("2002-09-01")},
-            new HotelBooking{RoomId=16,UserId=2,CheckInTime=DateTime.Parse("2002-09-01") ,CheckOutTime=DateTime.Parse("2002-09-01"),IsActive=true,IsDeleted=false,CreatedUserId =1,UpdatedUserId =1,CreatedDateTime=DateTime.Parse("2002-09-01"),UpdatedDateTime=DateTime.Parse("2002-09-01")},
-            new HotelBooking{RoomId=22,UserId=2,CheckInTime=DateTime.Parse("2002-09-01") ,CheckOutTime=DateTime.Parse("2002-09-01"),IsActive=true,IsDeleted=false,CreatedUserId =1,UpdatedUserId =1,CreatedDateTime=DateTime.Parse("2002-09-01"),UpdatedDateTime=DateTime.Parse("2002-09-01")},
+                new HotelBooking{RoomId=1,UserId=2,CheckInTime=DateTime.Parse("2002-09-01") ,CheckOutTime=DateTime.Parse("2002-09-01"),IsActive=true,IsDeleted=false,CreatedUserId =1,UpdatedUserId =1,CreatedDateTime=DateTime.Parse("2002-09-01"),UpdatedDateTime=DateTime.Parse("2002-09-01")},
+                new HotelBooking{RoomId=6,UserId=2,CheckInTime=DateTime.Parse("2002-09-01") ,CheckOutTime=DateTime.Parse("2002-09-01"),IsActive=true,IsDeleted=false,CreatedUserId =1,UpdatedUserId =1,CreatedDateTime=DateTime.Parse("2002-09-01"),UpdatedDateTime=DateTime.Parse("2002-09-01")},
+                new HotelBooking{RoomId=11,UserId=2,CheckInTime=DateTime.Parse("2002-09-01") ,CheckOutTime=DateTime.Parse("2002-09-01"),IsActive=true,IsDeleted=false,CreatedUserId =1,UpdatedUserId =1,CreatedDateTime=DateTime.Parse("2002-09-01"),UpdatedDateTime=DateTime.Parse("2002-09-01")},
+                new HotelBooking{RoomId=16,UserId=2,CheckInTime=DateTime.Parse("2002-09-01") ,CheckOutTime=DateTime.Parse("2002-09-01"),IsActive=true,IsDeleted=false,CreatedUserId =1,UpdatedUserId =1,CreatedDateTime=DateTime.Parse("2002-09-01"),UpdatedDateTime=DateTime.Parse("2002-09-01")},
+                new HotelBooking{RoomId=22,UserId=2,CheckInTime=DateTime.Parse("2002-09-01") ,CheckOutTime=DateTime.Parse("2002-09-01"),IsActive=true,IsDeleted=false,CreatedUserId =1,UpdatedUserId =1,CreatedDateTime=DateTime.Parse("2002-09-01"),UpdatedDateTime=DateTime.Parse("2002-09-01")},
             };
             foreach (HotelBooking h in hotelBookings)
             {

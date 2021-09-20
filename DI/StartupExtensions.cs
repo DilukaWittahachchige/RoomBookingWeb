@@ -4,8 +4,9 @@ using IBusinessServices;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
-using System;
 using System.IO;
+using IDataAccess;
+using DataAccess;
 
 namespace DI
 {
@@ -31,7 +32,12 @@ namespace DI
             // services.AddTransient<IEmailSender, EmailSender>();
 
             //DAL DI
-            //services.AddSingleton<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<ICodeRepository, CodeRepository>();
+            services.AddScoped<IRoomRepository, RoomRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IHotelBookingRepository, HotelBookingRepository>();
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             //BLL DI
             services.AddScoped<IRoomManagerService, RoomManagerService>();

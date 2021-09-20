@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EF.Data;
+using EF.Models;
+using IDataAccess;
 
 namespace DataAccess
 {
-    class HotelBookingRepository
+    public class HotelBookingRepository : GenericRepository<HotelBooking>, IHotelBookingRepository
     {
+        /// <summary>
+        /// Load all available rooms
+        /// </summary>
+        /// <returns></returns>
+
+        public HotelBookingRepository(RoomBookingContext context)
+            : base(context)
+        {
+
+        }
     }
 }

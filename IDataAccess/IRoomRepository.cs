@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IDataAccess
 {
-    public interface IRoomRepository
+    public interface IRoomRepository: IGenericRepository<Room>
     {
         IEnumerable<Room> LoadAllAvailable();
     }

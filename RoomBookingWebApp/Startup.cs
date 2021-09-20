@@ -1,3 +1,4 @@
+using DI;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -31,6 +32,8 @@ namespace RoomBookingWebApp
         {
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAd"));
+
+            services.AddServiceScribeCore();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

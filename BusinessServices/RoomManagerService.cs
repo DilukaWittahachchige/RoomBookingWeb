@@ -1,22 +1,32 @@
 ﻿using Common.Domain;
 using IBusinessServices;
+using IDataAccess;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessServices
 {
     public class RoomManagerService : IRoomManagerService
     {
+        private readonly IUnitOfWork _unityOfWork;
+
+        public RoomManagerService(IUnitOfWork unityOfWork)
+        {
+            this._unityOfWork = unityOfWork;
+        }
+
         public IEnumerable<Room> LoadAllAvailableRooms()
         {
-            var allAvailableRooms = new List<Room>();
-
-
-
-            return allAvailableRooms;
+            try
+            {
+                return this._unityOfWork.RoomRepository().Get().ToList().Where(x => x.RoomStatus == RoomStatus.Available);
+            }
+            catch (Exception ex)
+            {
+                //TODO: Global exception handling 
+                throw ex.InnerException;
+            }
         }
     }
 }

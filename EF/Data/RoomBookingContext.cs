@@ -28,3 +28,7 @@ namespace EF.Data
         }
     }
 }
+
+//modelBuilder.Entity<Foo>()
+//            .HasKey(p => new { p.Name, p.Id });
+//modelBuilder.Entity<Foo>().Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
