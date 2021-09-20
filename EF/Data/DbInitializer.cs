@@ -49,10 +49,14 @@ namespace EF.Data
             };
             foreach (Room r in rooms)
             {
-                context.Rooms.Add(r);
+                using (var dbContextTransaction = context.Database.BeginTransaction())
+                {
+                    context.Rooms.Add(r);
+                    context.SaveChanges();
+                    dbContextTransaction.Commit();
+                }
             }
-            context.SaveChanges();
-
+ 
             var users = new User[]
              {
                 new User{UserName="UserA",Type= UserType.Admin,UserPhoneNumber="+6576435089",UserEmailAddress="abc@gmail.com",UserNRIC="P6387362727",UserDateOfBirth=DateTime.Parse("1996-09-01"),IsActive=true,IsDeleted=false,CreatedUserId =1,UpdatedUserId =1,CreatedDateTime=DateTime.Parse("2002-09-01"),UpdatedDateTime=DateTime.Parse("2002-09-01")},
@@ -63,7 +67,12 @@ namespace EF.Data
              };
             foreach (User u in users)
             {
-                context.Users.Add(u);
+                using (var dbContextTransaction = context.Database.BeginTransaction())
+                {
+                    context.Users.Add(u);
+                    context.SaveChanges();
+                    dbContextTransaction.Commit();
+                }
             }
             context.SaveChanges();
 
@@ -73,12 +82,16 @@ namespace EF.Data
                 new HotelBooking{RoomId=1,UserId=2,CheckInTime=DateTime.Parse("2002-09-01") ,CheckOutTime=DateTime.Parse("2002-09-01"),IsActive=true,IsDeleted=false,CreatedUserId =1,UpdatedUserId =1,CreatedDateTime=DateTime.Parse("2002-09-01"),UpdatedDateTime=DateTime.Parse("2002-09-01")},
                 new HotelBooking{RoomId=6,UserId=2,CheckInTime=DateTime.Parse("2002-09-01") ,CheckOutTime=DateTime.Parse("2002-09-01"),IsActive=true,IsDeleted=false,CreatedUserId =1,UpdatedUserId =1,CreatedDateTime=DateTime.Parse("2002-09-01"),UpdatedDateTime=DateTime.Parse("2002-09-01")},
                 new HotelBooking{RoomId=11,UserId=2,CheckInTime=DateTime.Parse("2002-09-01") ,CheckOutTime=DateTime.Parse("2002-09-01"),IsActive=true,IsDeleted=false,CreatedUserId =1,UpdatedUserId =1,CreatedDateTime=DateTime.Parse("2002-09-01"),UpdatedDateTime=DateTime.Parse("2002-09-01")},
-                new HotelBooking{RoomId=16,UserId=2,CheckInTime=DateTime.Parse("2002-09-01") ,CheckOutTime=DateTime.Parse("2002-09-01"),IsActive=true,IsDeleted=false,CreatedUserId =1,UpdatedUserId =1,CreatedDateTime=DateTime.Parse("2002-09-01"),UpdatedDateTime=DateTime.Parse("2002-09-01")},
-                new HotelBooking{RoomId=22,UserId=2,CheckInTime=DateTime.Parse("2002-09-01") ,CheckOutTime=DateTime.Parse("2002-09-01"),IsActive=true,IsDeleted=false,CreatedUserId =1,UpdatedUserId =1,CreatedDateTime=DateTime.Parse("2002-09-01"),UpdatedDateTime=DateTime.Parse("2002-09-01")},
+                new HotelBooking{RoomId=17,UserId=2,CheckInTime=DateTime.Parse("2002-09-01") ,CheckOutTime=DateTime.Parse("2002-09-01"),IsActive=true,IsDeleted=false,CreatedUserId =1,UpdatedUserId =1,CreatedDateTime=DateTime.Parse("2002-09-01"),UpdatedDateTime=DateTime.Parse("2002-09-01")},
             };
             foreach (HotelBooking h in hotelBookings)
             {
-                context.HotelBookings.Add(h);
+                using (var dbContextTransaction = context.Database.BeginTransaction())
+                {
+                    context.HotelBookings.Add(h);
+                    context.SaveChanges();
+                    dbContextTransaction.Commit();
+                }
             }
             context.SaveChanges();
         }

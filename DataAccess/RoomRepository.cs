@@ -1,5 +1,5 @@
-﻿using Common.Domain;
-using EF.Data;
+﻿using EF.Data;
+using EF.Models;
 using IDataAccess;
 using System;
 using System.Collections.Generic;
